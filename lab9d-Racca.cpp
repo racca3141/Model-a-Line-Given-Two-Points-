@@ -51,8 +51,8 @@ int main(void) {
 
 	for (int i = 0; i < 100; i++) {
 		
-		Point loc1((pow(-1, rand() % 2)) * (rand() % 50), (pow(-1, rand() % 2)) * (rand() % 50));
-		Point loc2((pow(-1, rand() % 2)) * (rand() % 50), (pow(-1, rand() % 2)) * (rand() % 50));
+		Point loc1((pow(-1, rand() % 2)) * (rand() % 10), (pow(-1, rand() % 2)) * (rand() % 10));
+		Point loc2((pow(-1, rand() % 2)) * (rand() % 10), (pow(-1, rand() % 2)) * (rand() % 10));
 
 		Line line1(loc1, loc2);
 
@@ -60,10 +60,12 @@ int main(void) {
 		cout << "-------------------------" << endl;
 		cout << "Point 1: (" << loc1.x << "," << loc1.y << ")" << endl;
 		cout << "Point 2: (" << loc2.x << "," << loc2.y << ")" << endl;
-		cout << "Slope:          " << line1.slope() << endl;
-		cout << "y-intercept:    " << line1.yIntercept() << endl;
-		x = (pow(-1, rand() % 2)) * (rand() % 50);
-		cout << "If x = " << x << ", y = " << line1.evaluateY(x) << endl;
+		if (loc1.x != loc2.x) {
+			cout << "Slope:          " << line1.slope() << endl;
+			cout << "y-intercept:    " << line1.yIntercept() << endl;
+			x = (pow(-1, rand() % 2)) * (rand() % 50);
+			cout << "If x = " << x << ", y = " << line1.evaluateY(x) << endl;
+		}
 		cout << endl << endl;
 	}
 
